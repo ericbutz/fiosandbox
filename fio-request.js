@@ -6,18 +6,18 @@ const fetchJson = async (uri, opts = {}) => {
 }
 
 const baseUrl = 'https://testnet.fioprotocol.io:443/v1/'
-//const baseUrl = 'https://https://fio.greymass.com/v1/'
+//const baseUrl = 'https://fio.greymass.com/v1/'
 
 let payeePrivKey = '',
   payeePubKey = '',
   payeeAddress = '',
-  payerPubKey = ''
+  payerPubKey = '',
   payerAddress = '',
-  chainCode = 'ABC',
-  tokenCode = 'ABC',
-  tokenAddress = 'thisispayeetokenpublicaddress',
-  amount = 1000000000,
-  requestMemo = 'Request test memo',
+  chainCode = '',
+  tokenCode = '',
+  tokenAddress = '',
+  amount = 5,
+  requestMemo = '',
   maxFee = 100000000000
 
 
