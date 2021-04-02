@@ -11,7 +11,6 @@ const baseUrl = 'https://fio.greymass.com/v1/'
 let privateKey = '',
   publicKey = ''
 
-
 const getPendingFioRequests = async () => {
   let result
 

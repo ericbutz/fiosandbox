@@ -11,7 +11,6 @@ const baseUrl = 'https://testnet.fioprotocol.io:443/v1/'
 let privateKey = '',
   publicKey = ''
 
-
 const getSentFioRequests = async () => {
   let result
 
