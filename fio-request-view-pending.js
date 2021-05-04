@@ -5,8 +5,8 @@ const fetchJson = async (uri, opts = {}) => {
   return fetch(uri, opts)
 }
 
-//const baseUrl = 'https://testnet.fioprotocol.io:443/v1/'
-const baseUrl = 'https://fio.greymass.com/v1/'
+const baseUrl = 'https://testnet.fioprotocol.io:443/v1/'
+//const baseUrl = 'https://fio.greymass.com/v1/'
 
 let privateKey = '',
   publicKey = ''

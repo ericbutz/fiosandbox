@@ -5,12 +5,12 @@ const fetchJson = async (uri, opts = {}) => {
   return fetch(uri, opts)
 }
 
-//const baseUrl = 'https://testnet.fioprotocol.io:443/v1/'
-const baseUrl = 'https://fio.greymass.com/v1/'
+const baseUrl = 'https://testnet.fioprotocol.io:443/v1/'
+//const baseUrl = 'https://fio.greymass.com/v1/'
 
-let privateKey = '5JC4xm6fJc9SJsaZPd2TTWYVZbCcHLmXiXmZJxhiNzFHzeaqygU',
-  publicKey = 'FIO4zouEPAZ2KmnNEmjNfi1MjGCv1QAXjnZucQLaUoUr7dneLdcx7',
-  address = 'changenow@fiomembers',
+let privateKey = '',
+  publicKey = '',
+  address = '',
   maxFee = 100000000000
 
 
