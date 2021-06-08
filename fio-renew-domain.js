@@ -8,9 +8,9 @@ const fetchJson = async (uri, opts = {}) => {
 const baseUrl = 'https://testnet.fioprotocol.io:443/v1/'
 //const baseUrl = 'https://fio.greymass.com/v1/'
 
-let privateKey = '5KNMbAhXGTt2Leit3z5JdqqtTbLhxWNf6ypm4r3pZQusNHHKV7a',
-  publicKey = 'FIO6TWRA6o5UNeMVwG8oGxedvhizd8UpfGbnGKaXEiPH2kUWEPiEb',
-  domain = 'regtest',
+let privateKey = '',
+  publicKey = '',
+  domain = '',
   maxFee = 1000000000000
 
 
