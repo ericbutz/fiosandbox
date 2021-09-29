@@ -13,7 +13,7 @@ const baseUrl = 'https://testnet.fioprotocol.io:443/v1/'
 let privateKey = '',
   publicKey = '',
   fioAddress = '',
-  bundleSets = 2
+  bundleSets = 2,
   maxFee = 100000000000
 
 
