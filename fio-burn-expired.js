@@ -11,13 +11,11 @@ async function timeout(ms) {
   })
 }
 
-const baseUrl = 'https://testnet.fioprotocol.io:443/v1/'
-//const baseUrl = 'https://fio.greymass.com/v1/'
+const baseUrl = 'https://testnet.fioprotocol.io/v1/'
+//const baseUrl = 'https://fio.blockpane.com/v1/'
 
 let privateKey = '',
-  publicKey = '',
-  newAddress = '',
-  maxFee = 100000000000
+  publicKey = ''
 
 
 const burnExpired = async () => {
@@ -37,11 +35,28 @@ const burnExpired = async () => {
   let empty = false;
   let workDoneThisRound = true;
   let workDoneThisOffset = false;
-  let count = 1;  //1
+  let count = 1; 
 
   while (!empty) {
     offset = burnexpiredStepSize * count;
     limit = burnexpiredStepSize;
+
+    pushResultBefore = await fetch(baseUrl + 'chain/get_table_rows', {
+      body: `{
+      "json": true,
+      "code": "fio.address",
+      "scope": "fio.address",
+      "table": "domains",
+      "limit": "${burnexpiredStepSize}",
+      "lower_bound": "${burnexpiredStepSize * count}",
+      "reverse": false,
+      "show_payer": false
+    }`,
+      method: 'POST',
+    });
+
+    resultBefore = await pushResultBefore.json()
+    console.log('\nBefore action Table lookup: ', resultBefore);
 
     try {
       const result = await user.genericAction('pushTransaction', {
@@ -89,7 +104,7 @@ const burnExpired = async () => {
     });
 
     result = await pushResult.json()
-    console.log('Table lookup: ', result);
+    //console.log('Table lookup: ', result);
     
     if (result.rows.length == 0) {
       console.log("DONE");
@@ -113,11 +128,7 @@ const burnExpired = async () => {
       }
       
     }
-
-  
   }
-
-
 }
 
 burnExpired();
