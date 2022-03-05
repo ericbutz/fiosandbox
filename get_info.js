@@ -1,6 +1,21 @@
 fetch = require('node-fetch')
 
-apiNodes = [
+apiNodesTestnet = [
+  "https://fiotestnet.blockpane.com",
+  "https://fiotestnet.greymass.com",
+  "https://testnet.fio.eosdetroit.io",
+  "https://test.fio.eosusa.news",
+  "https://api.fiotest.alohaeos.com",
+  "https://api.fiotest.currencyhub.io",
+  "https://testnet.fioprotocol.io",
+  "https://api.testnet.fiosweden.org",
+  "https://fio-test.eos.barcelona",
+  "https://fio-testnet.eosblocksmith.io",
+  "https://api.fio.alohaeos.com",
+  "https://fio-bp.dmail.co:7777"
+]
+
+apiNodesMainnet = [
   "https://fio.blockpane.com",
   "https://fio.eu.eosamsterdam.net",
   "https://fio.eosdac.io",
@@ -32,9 +47,9 @@ apiNodes = [
 
 const getInfo = async () => {
 
-  for (node in apiNodes) {
+  for (node in apiNodesTestnet) {
     try {
-      httpEndpoint = apiNodes[node];
+      httpEndpoint = apiNodesTestnet[node];
       info = await (await fetch(httpEndpoint + '/v1/chain/get_info ', { method: 'POST' })).json()
       console.log('Server: ' + httpEndpoint + ', server_version_string: ' + info.server_version_string);
     } catch (err) {
