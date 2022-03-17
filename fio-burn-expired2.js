@@ -42,8 +42,8 @@ const baseUrl = 'https://fiotestnet.blockpane.com/v1/'
 
 const fiourl = baseUrl + "chain/";
 
-let privateKey = '5J9NxRe8Eych3SBHeaKzf7U6opXZWL6q4FDwyzFqHqtms32mYTs',
-  publicKey = 'FIO66TsSyX9w2m492ZfeHGrvEo5qu7MTcy8xhQNkVMkAcDHSRU3tN'
+let privateKey = '',
+  publicKey = ''
 
 
 const burnExpired = async () => {
